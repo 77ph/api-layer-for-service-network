@@ -9,4 +9,6 @@ sudo apt-get remove python3-pip
 sudo apt-get install python3-pip
 sudo apt-get install python3.6-dev
 pip3 install web3
+pip3 install pika 
+pip3 install docker
 
