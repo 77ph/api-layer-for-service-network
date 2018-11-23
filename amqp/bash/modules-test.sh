@@ -49,7 +49,7 @@ fi
 
 sudo docker pull 77phnet/nginx-rtmp > /dev/null 2>&1
 sudo docker run -d -p 1935:1935 -p 8080:80 --name tmp-nginx-container --rm 77phnet/nginx-rtmp > /dev/null 2>&1
-sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf test/nginx.conf
+sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf ../test/nginx.conf
 sudo docker rm -f tmp-nginx-container > /dev/null 2>&1
 
 #State before test
@@ -66,7 +66,7 @@ jobid="0200000000000000000001"
 nodeid="1d94baec6903bd722953d1111d3b03ea3fa99378"
 role="distributor"
 echo "TEST #1. Create ${role} node. node_id ${nodeid}"
-./t5_send.py test/node_create-public-distributor.json > /dev/null 2>&1
+./t5_send.py ../test/node_create-public-distributor.json > /dev/null 2>&1
 
 if [ $? -eq 0 ]
 then
@@ -88,7 +88,7 @@ else
 	echo "Task received and container created. Step fail"
 fi 
 
-if cmp -s test/nginx.conf /opt/nginx/nginx.conf
+if cmp -s ../test/nginx.conf /opt/nginx/nginx.conf
 then
 	echo "The files match test/nginx.conf and /opt/nginx/nginx.conf. Step pass"
 else
@@ -97,7 +97,7 @@ else
 fi 
 
 echo "TEST #2. Pipline to ${role} node. jobid ${jobid}. node_id ${nodeid}"
-./t5_send.py test/pipeline-with-commands.json > /dev/null 2>&1
+./t5_send.py ../test/pipeline-with-commands.json > /dev/null 2>&1
 
 if [ $? -eq 0 ]
 then
@@ -119,12 +119,12 @@ else
 	echo "Task received and app created. Step fail"
 fi 
 
-if cmp -s test/distributor-app.conf /opt/nginx/app-enabled/${jobid}
+if cmp -s ../test/distributor-app.conf /opt/nginx/app-enabled/${jobid}
 then
 	echo "The files match test/distributor-app.conf and /opt/nginx/app-enabled/${jobid}. Step pass"
 else
 	echo "The files are different test/distributor-app.conf and /opt/nginx/app-enabled/${jobid}. Step fail"
-	diff test/distributor-app.conf /opt/nginx/app-enabled/${jobid}
+	diff ../test/distributor-app.conf /opt/nginx/app-enabled/${jobid}
 fi
 
 echo "rollback to zero state"
@@ -144,7 +144,7 @@ fi
 
 sudo docker pull 77phnet/nginx-rtmp > /dev/null 2>&1
 sudo docker run -d -p 1935:1935 -p 8080:80 --name tmp-nginx-container --rm 77phnet/nginx-rtmp > /dev/null 2>&1
-sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf test/nginx.conf
+sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf ../test/nginx.conf
 sudo docker rm -f tmp-nginx-container > /dev/null 2>&1
 
 # test transcoder
@@ -174,7 +174,7 @@ else
 	echo "Task received and container created. Step fail"
 fi 
 
-if cmp -s test/nginx.conf /opt/nginx/nginx.conf
+if cmp -s ../test/nginx.conf /opt/nginx/nginx.conf
 then
 	echo "The files match test/nginx.conf and /opt/nginx/nginx.conf. Step pass"
 else
@@ -183,7 +183,7 @@ else
 fi 
 
 echo "TEST #4. Pipline to ${role} node. jobid ${jobid}. node_id ${nodeid}"
-./t5_send.py test/pipeline-with-commands.json > /dev/null 2>&1
+./t5_send.py ../test/pipeline-with-commands.json > /dev/null 2>&1
 
 if [ $? -eq 0 ]
 then
@@ -205,7 +205,7 @@ else
 	echo "Task received and app created. Step fail"
 fi 
 
-if cmp -s test/transcoder-app.conf /opt/nginx/app-enabled/${jobid}
+if cmp -s ../test/transcoder-app.conf /opt/nginx/app-enabled/${jobid}
 then
 	echo "The files match test/transcoder-app.conf and /opt/nginx/app-enabled/${jobid}. Step pass"
 else
@@ -230,7 +230,7 @@ fi
 
 sudo docker pull 77phnet/nginx-rtmp > /dev/null 2>&1
 sudo docker run -d -p 1935:1935 -p 8080:80 --name tmp-nginx-container --rm 77phnet/nginx-rtmp > /dev/null 2>&1
-sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf test/nginx.conf
+sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf ../test/nginx.conf
 sudo docker rm -f tmp-nginx-container > /dev/null 2>&1
 
 # test storage
@@ -238,7 +238,7 @@ jobid="0200000000000000000001"
 nodeid="2f45731160c02f69cad1ff8ab9a48492dc3b2022"
 role="storage"
 echo "TEST #5. Create ${role} node. node_id ${nodeid}"
-./t5_send.py test/node_create-public-storage.json > /dev/null 2>&1
+./t5_send.py ../test/node_create-public-storage.json > /dev/null 2>&1
 
 if [ $? -eq 0 ]
 then
@@ -260,7 +260,7 @@ else
 	echo "Task received and container created. Step fail"
 fi 
 
-if cmp -s test/nginx.conf /opt/nginx/nginx.conf
+if cmp -s ../test/nginx.conf /opt/nginx/nginx.conf
 then
 	echo "The files match test/nginx.conf and /opt/nginx/nginx.conf. Step pass"
 else
@@ -269,7 +269,7 @@ else
 fi 
 
 echo "TEST #6. Pipline to ${role} node. jobid ${jobid}. node_id ${nodeid}"
-./t5_send.py test/pipeline-with-commands.json > /dev/null 2>&1
+./t5_send.py ../test/pipeline-with-commands.json > /dev/null 2>&1
 
 if [ $? -eq 0 ]
 then
@@ -291,7 +291,7 @@ else
 	echo "Task received and app created. Step fail"
 fi 
 
-if cmp -s test/storage-app.conf /opt/nginx/app-enabled/${jobid}
+if cmp -s ../test/storage-app.conf /opt/nginx/app-enabled/${jobid}
 then
 	echo "The files match test/storage-app.conf and /opt/nginx/app-enabled/${jobid}. Step pass"
 else
