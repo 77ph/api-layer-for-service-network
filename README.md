@@ -21,4 +21,19 @@ Each of them has its advantages and disadvantages.
 
 Native ethereum messaging protocol, part of official realise
 
-#advantages
+*advantages*
+
+1. decentrilized (not so important for poa network)
+2. encrypted messages
+3. part of eth api (not need additional software)
+
+*limitations*
+
+1. slow
+2. poor and non stable api
+3. sync keys security problem
+
+
+**simple control scheme**
+
+
