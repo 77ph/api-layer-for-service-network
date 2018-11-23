@@ -1,0 +1,36 @@
+
+TEST #1. Create distributor node. node_id 1d94baec6903bd722953d1111d3b03ea3fa99378
+Send task to query 1d94baec6903bd722953d1111d3b03ea3fa99378. Step pass
+Waiting 15s
+Task received and container created. Step pass
+8f0d02fb422d        77phnet/nginx-rtmp   "/opt/nginx/sbin/ngi…"   12 seconds ago      Up 11 seconds             0.0.0.0:1935->1935/tcp, 0.0.0.0:8080->80/tcp   distributor
+The files match test/nginx.conf and /opt/nginx/nginx.conf. Step pass
+TEST #2. Pipline to distributor node. jobid 0200000000000000000001. node_id 1d94baec6903bd722953d1111d3b03ea3fa99378
+Send pipline to query 1d94baec6903bd722953d1111d3b03ea3fa99378. Step pass
+Waiting 15s
+Task received and app created. Step pass
+The files match test/distributor-app.conf and /opt/nginx/app-enabled/0200000000000000000001. Step pass
+rollback to zero state
+TEST #3. Create transcoder node. node_id 88aee28aa0a28177d2c676bfafda48d03ff44eb8
+Send task to query 88aee28aa0a28177d2c676bfafda48d03ff44eb8. Step pass
+Waiting 15s
+Task received and container created. Step pass
+9102d76daf1a        77phnet/nginx-rtmp   "/opt/nginx/sbin/ngi…"   12 seconds ago      Up 11 seconds             0.0.0.0:1935->1935/tcp, 0.0.0.0:8080->80/tcp   transcoder
+The files match test/nginx.conf and /opt/nginx/nginx.conf. Step pass
+TEST #4. Pipline to transcoder node. jobid 0200000000000000000001. node_id 88aee28aa0a28177d2c676bfafda48d03ff44eb8
+Send pipline to query 88aee28aa0a28177d2c676bfafda48d03ff44eb8. Step pass
+Waiting 15s
+Task received and app created. Step pass
+The files match test/transcoder-app.conf and /opt/nginx/app-enabled/0200000000000000000001. Step pass
+rollback to zero state
+TEST #5. Create storage node. node_id 2f45731160c02f69cad1ff8ab9a48492dc3b2022
+Send task to query 2f45731160c02f69cad1ff8ab9a48492dc3b2022. Step pass
+Waiting 15s
+Task received and container created. Step pass
+51ebc254edae        77phnet/nginx-rtmp   "/opt/nginx/sbin/ngi…"   12 seconds ago      Up 11 seconds             0.0.0.0:1935->1935/tcp, 0.0.0.0:8080->80/tcp   storage
+The files match test/nginx.conf and /opt/nginx/nginx.conf. Step pass
+TEST #6. Pipline to storage node. jobid 0200000000000000000001. node_id 2f45731160c02f69cad1ff8ab9a48492dc3b2022
+Send pipline to query 2f45731160c02f69cad1ff8ab9a48492dc3b2022. Step pass
+Waiting 15s
+Task received and app created. Step pass
+The files match test/storage-app.conf and /opt/nginx/app-enabled/0200000000000000000001. Step pass
