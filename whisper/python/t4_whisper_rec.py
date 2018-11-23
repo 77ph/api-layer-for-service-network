@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-    A pure python whisper ping daemon implementation using web3.py and geth 1.8.x.
+    A pure python whisper ping daemon implementation using web3.py and geth 1.8.x. using asymmetric cryptography algorithms
     ./t4_whisper_rec.py RPCport
     RPCport
     example: ./t4_whisper_rec.py 8502
