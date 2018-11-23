@@ -6,6 +6,7 @@ Receive message via whisper using cryptography with symmetric key. Network vcnet
 Waiting msg = ["start"] or ["stop"]
 Call function incrementCounter() in Contract after received "start"
 Call function derementCounter() in Contract after received "stop"
+ABI = Counter2.json
 PoC
 """
 import datetime
