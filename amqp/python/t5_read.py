@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-    A pure python rabbitmq read a task from query and reconfig nginx.
+    A pure python read a task via AMQP from query and create a docker cointainer/reconfig nginx in container.
     ./t5_read.py node_id
 """
 
