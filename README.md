@@ -13,7 +13,7 @@ Some approaches to api control layer for DSN
 
 Considered two protocols
 - Ethereum wisper
-- AMGP (RabbitMQ)
+- AMQP (RabbitMQ)
 
 Each of them has its advantages and disadvantages.
 
