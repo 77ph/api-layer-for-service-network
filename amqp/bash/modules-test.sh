@@ -1,5 +1,6 @@
 #!/bin/bash
 
+## modules test
 sudo apt install -y timelimit > /dev/null 2>&1
 
 which docker > /dev/null 2>&1
@@ -57,6 +58,8 @@ sudo docker ps
 ls -al /opt/nginx/
 echo ""
 #
+
+cd ../python/
 
 # test distributor
 jobid="0200000000000000000001"
