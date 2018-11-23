@@ -34,6 +34,19 @@ Native ethereum messaging protocol, part of official realise
 3. sync keys security problem
 
 
-**simple control scheme**
+**simple control scheme for videocoin network**
+
+videocoin network consist of set of instances like nginx-rtmp/ffmpeg
+
+![test scheme](./docs/whisper1.png)
+
+
+
+
+
+
+
+
+
 
 
