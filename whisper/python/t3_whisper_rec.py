@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+"""
+Receive message via whisper using cryptography with symmetric key. Network vcnet2.
+
+./t3_whisper_rec
+Waiting msg = ["start"] or ["stop"]
+Call function incrementCounter() in Contract after received "start"
+Call function derementCounter() in Contract after received "stop"
+PoC
+"""
 import datetime
 import json
 import web3
