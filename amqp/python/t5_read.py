@@ -297,8 +297,6 @@ Json command to nginx create in docker. version 0.1
                         }
         }
 }
-
-
 """
 def nginx_node_create(data):
 	cmd = './prepare-container-node.sh'
