@@ -1,0 +1,151 @@
+{
+	"_comments": "version 1.0 API. Top level describe ref: https://docs.google.com/document/d/1fFYMT2GRLFBQrtF0fltHrq_-3tciqQ6-fT_43CoPBS0, former t5_task_gen.json",
+	"apiVersion": "1.00",
+	"typeApi": "private",
+	"pipeline": {
+		"tasks": [{
+				"node_id": "1d94baec6903bd722953d1111d3b03ea3fa99378",
+				"msg": {
+					"command": "config",
+					"type": "distributor",
+					"nginx-rtmp-core": {
+						"listen": "1935",
+						"application": "0200000000000000000001"
+					},
+					"nginx-rtmp-live": {
+						"live": "on"
+					},
+					"ffmpeg-rtmp": {
+						"outputs": [{
+								"variant": "_4k",
+								"ip": "35.242.172.58",
+								"failover_ip": "35.242.172.59"
+							},
+							{
+								"ip": "35.233.205.84",
+								"failover_ip": "35.233.205.85"
+							},
+							{
+								"ip": "35.197.27.59",
+								"failover_ip": "35.197.27.60"
+							},
+							{
+								"ip": "35.197.4.197",
+								"failover_ip": "35.197.4.198"
+							}
+						]
+					}
+				}
+			},
+			{
+				"node_id": "2f45731160c02f69cad1ff8ab9a48492dc3b2022",
+				"msg": {
+					"command": "config",
+					"type": "storage",
+					"nginx-rtmp-core": {
+						"listen": "1935",
+						"application": "0200000000000000000001"
+					},
+					"nginx-rtmp-live": {
+						"live": "on"
+					},
+					"nginx-rtmp-hls": {
+						"hls_fragment": "5",
+						"hls_playlist_length": "30",
+						"hls_fragment_naming": "timestamp",
+						"hls_fragment_naming_granularity": "2",
+						"hls_fragment_slicing": "aligned",
+						"hls_variant": [{
+							"variant": "_4k",
+							"params": "BANDWIDTH=50000000,RESOLUTION=3840x2160"
+						}, {
+							"variant": "_1080p",
+							"params": "BANDWIDTH=6000000,RESOLUTION=1920x1080"
+						}, {
+							"variant": "_720p",
+							"params": "BANDWIDTH=3000000,RESOLUTION=1280x720"
+						}, {
+							"variant": "480",
+							"params": "BANDWIDTH=1000000,RESOLUTION=854x480"
+						}]
+					}
+				}
+			},
+			{
+				"node_id": "88aee28aa0a28177d2c676bfafda48d03ff44eb8",
+				"msg": {
+					"command": "config",
+					"type": "transcoder",
+					"nginx-rtmp-core": {
+						"listen": "1935",
+						"application": "0200000000000000000001"
+					},
+					"nginx-rtmp-live": {
+						"live": "on"
+					},
+					"ffmpeg-rtmp": {
+						"output": {
+							"application": "0200000000000000000001",
+							"variant": "_1080p",
+							"codec": "libx264",
+							"bitrate": "6000000",
+							"resolution": "1920x1080",
+							"ip": "35.233.205.84",
+							"failover_ip": "35.233.205.85"
+						}
+					}
+				}
+			},
+			{
+				"node_id": "d8a9d07b9884d32da3700634aab1d373fffd36ef",
+				"msg": {
+					"command": "config",
+					"type": "transcoder",
+					"nginx-rtmp-core": {
+						"listen": "1935",
+						"application": "0200000000000000000001"
+					},
+					"nginx-rtmp-live": {
+						"live": "on"
+					},
+					"ffmpeg-rtmp": {
+						"output": {
+							"application": "0200000000000000000001",
+							"variant": "_720p",
+							"codec": "libx264",
+							"bitrate": "3000000",
+							"resolution": "1280x720",
+							"ip": "35.197.27.59",
+							"failover_ip": "35.197.27.60"
+						}
+					}
+				}
+			},
+			{
+				"node_id": "4586f87cdeb706f037d4cddcac051c04b2f55d16",
+				"msg": {
+					"command": "config",
+					"type": "transcoder",
+					"nginx-rtmp-core": {
+						"listen": "1935",
+						"application": "0200000000000000000001"
+					},
+					"nginx-rtmp-live": {
+						"live": "on"
+					},
+					"ffmpeg-rtmp": {
+						"output": {
+							"application": "0200000000000000000001",
+							"variant": "_480p",
+							"codec": "libx264",
+							"bitrate": "1000000",
+							"resolution": "1280x720",
+							"ip": "35.197.4.197",
+							"failover_ip": "35.197.4.198"
+						}
+					}
+				}
+			}
+		]
+	}
+}

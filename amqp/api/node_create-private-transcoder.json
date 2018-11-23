@@ -1,0 +1,22 @@
+{
+	"_comments": "version 1.0 API. Top level describe ref: https://docs.google.com/document/d/1fFYMT2GRLFBQrtF0fltHrq_-3tciqQ6-fT_43CoPBS0, former t5_task_gen.json",
+        "apiVersion": "1.00",
+        "typeApi": "private",
+        "command": "node",
+        "subcommand": "create",
+	"params": "transcoder",
+	"node_id": "4586f87cdeb706f037d4cddcac051c04b2f55d16",
+	"spec": {
+		"containers":
+			{ 
+				"image": "77phnet/nginx-rtmp",
+				"ports": {"1935":"1935","8080":"80"},
+				"volume-mounts": {
+					"/opt/nginx/nginx.conf": "/opt/nginx/nginx.conf",
+                                        "/opt/nginx/app-enabled": "/opt/nginx/app-enabled",
+                                        "/opt/nginx/sites-enabled": "/opt/nginx/sites-enabled",
+					"/opt/data":"/opt/data"
+                                }
+			}				
+	}
+}
