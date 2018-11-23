@@ -1,4 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+"""
+    A rabbitmq send. Hello world exmple.
+    ./hello_world_send.py
+"""
 import pika
 credentials = pika.PlainCredentials('andrey', '1234567890qw')
 parameters = pika.ConnectionParameters("10.168.0.3", 5672, '/', credentials)
