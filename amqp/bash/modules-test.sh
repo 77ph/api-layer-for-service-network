@@ -296,6 +296,6 @@ then
 	echo "The files match test/storage-app.conf and /opt/nginx/app-enabled/${jobid}. Step pass"
 else
 	echo "The files are different test/storage-app.conf and /opt/nginx/app-enabled/${jobid}. Step fail"
-	diff test/storage-app.conf /opt/nginx/app-enabled/${jobid}
+	diff ../test/storage-app.conf /opt/nginx/app-enabled/${jobid}
 fi
 
