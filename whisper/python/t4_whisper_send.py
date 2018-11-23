@@ -2,7 +2,7 @@
 
 """
     A pure python whisper ping/pong implementation using web3.py and geth 1.8.x with asymetric cryptography algorithms.
-    ./t4_whisper_send.py PRCport
+    ./t4_whisper_send.py PRCport count
     
     t4.json struct :
     {
@@ -17,7 +17,7 @@
     }
     list of keypair for nodes.
     
-    example: ./t4_whisper_send.py 8502
+    example: ./t4_whisper_send.py 8502 100
     topic (pre-defined): b'0080' port for send
     topic (pre-defined): b'0081' port for listen
 """
