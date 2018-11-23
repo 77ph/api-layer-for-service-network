@@ -18,3 +18,7 @@ Considered two protocols
 Each of them has its advantages and disadvantages.
 
 **[Wisper protocol](https://github.com/ethereum/go-ethereum/wiki/Whisper)**
+
+Native ethereum messaging protocol, part of official realise
+
+#advantages
