@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+Send message via whisper using cryptography with symmetric key. Network vcnet2.
+
+./t3_whisper_send.py
+PoC
+"""
 import datetime
 import json
 import web3
