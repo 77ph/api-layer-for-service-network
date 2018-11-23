@@ -42,7 +42,7 @@ sudo mkdir -p /opt/nginx/sites-enabled/
 sudo mkdir -p /opt/data/
 
 sudo docker pull 77phnet/nginx-rtmp
-sudo docker run -d -p 1935:1935 -p 8080:80 --name tmp-nginx-container --rm 77phnet/nginx-rtmp
+sudo docker run -d -p 1935:1935 -p 80:8080 --name tmp-nginx-container --rm 77phnet/nginx-rtmp
 sudo docker cp tmp-nginx-container:/opt/nginx/nginx.conf /opt/nginx/nginx.conf
 sudo docker rm -f tmp-nginx-container
 
