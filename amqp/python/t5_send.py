@@ -15,7 +15,7 @@
 
     ./t5_send.py node_create-public.json   
 
-ToDo: t5_send => vcli | API gate
+ToDo: split t5_send to vcli | API gate
 
 """
 
