@@ -17,3 +17,4 @@ Considered two protocols
 
 Each of them has its advantages and disadvantages.
 
+**[Wisper protocol](https://github.com/ethereum/go-ethereum/wiki/Whisper)**
