@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
 
 """
-    A pure python whisper broadcast ping/pong implementation using web3.py and geth 1.8.x.
-    ./t4_whisper_send.py RPCport count
-    RPCport
-    count, count of ping (ACK) packet
-    example: ./t4_whisper_send.py 8502 100 
+    A pure python whisper ping/pong implementation using web3.py and geth 1.8.x with asymetric cryptography algorithms.
+    ./t4_whisper_send.py t4.json
+    t4.json struct :
+    {
+    "address-node": [
+    {
+    "address": "0xAd12F90BE5A51163aac69DfeF2AaF9E37C4D1591", 
+    "keyPairId": "48e7f279acaf225688e95c2d46ea861c3440b8e208c66f1c16cad2466bc18ac3", 
+    "PubKey": "0x0494793ff515cc6fe553ef0283c182d36fc2210dce140b704356486480c385bf5ea2f68e531b6cf9e6894dd2e11ab6a0e56df04c6b11a10b3a40285adf4bef1430"}, {"address": "0x2Eeccf69A28422b4ADfe4c21DDBa3853dd8EBEC5", "keyPairId": "a4b16a71e2cfb4a92660940f96b61334cfccba814f3dab409a1d57e918b58885", "PubKey": "0x04555c4acc1d4abec063f7a9d7d1523c0b3fc639c8dce7632ac32f2b9aed4b47d089f3110c8d7972dabff6d600c77a5c753a712f0d6362448b33da684e629d51db"
+    }
+    ..
+    ]
+    }
+    list of keypair for nodes.
+    
+    example: ./t4_whisper_send.py t4.json
     topic (pre-defined): b'0080' port for send
     topic (pre-defined): b'0081' port for listen
 """
