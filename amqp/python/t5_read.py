@@ -287,7 +287,7 @@ Json command to nginx create in docker. version 0.1
                 "containers":
                         { 
                                 "image": "77phnet/nginx-rtmp",
-                                "ports": {"1935":"1935","8080":"80"},
+                                "ports": {"1935":"1935","80":"8080"},
                                 "volume-mounts": {
                                 	"/opt/nginx/nginx.conf": "/opt/nginx/nginx.conf",
                                 	"/opt/nginx/app-enabled": "/opt/nginx/app-enabled",
