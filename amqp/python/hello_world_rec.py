@@ -1,4 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+"""
+    A rabbitmq receive. Hello world exmple.
+    ./hello_world_rec.py
+"""
+
 import pika
 
 credentials = pika.PlainCredentials('andrey', '1234567890qw')
