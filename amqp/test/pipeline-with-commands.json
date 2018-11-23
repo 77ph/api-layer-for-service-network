@@ -1,0 +1,67 @@
+{
+	"_comments": "version 1.0 API. Top level describe ref: https://docs.google.com/document/d/1fFYMT2GRLFBQrtF0fltHrq_-3tciqQ6-fT_43CoPBS0, former t5_task_gen.json",
+	"apiVersion": "1.00",
+	"typeApi": "public",
+	"command": "pipeline",
+	"subcommand": "start",
+	"pipeline": 
+		{
+			"type_source": "file",
+        		"job_id": "0200000000000000000001",
+        		"number_of_streams": "3",
+        		"source": {
+                		"resolution_name": "_4k", 
+                		"resolution": "3840x2160",
+                		"bitrate": "50000000"
+        		},
+        		"transcoding": [
+                		{
+                        		"resolution_name": "_1080p", 
+                        		"resolution": "1920x1080",
+                        		"bitrate": "6000000"
+                		},
+                		{
+                        		"resolution_name": "_720p", 
+                        		"resolution": "1280x720",
+                        		"bitrate": "3000000"
+                		},
+                		{
+                        		"resolution_name": "_480p", 
+                        		"resolution": "854x480",
+                        		"bitrate": "1000000"
+                		}
+        			],
+        	"nodes": [
+                	{
+                        	"type": "distributor",
+                        	"node_id": "1d94baec6903bd722953d1111d3b03ea3fa99378", 
+                        	"ip": "35.198.30.225",
+                        	"failover_ip": "35.221.152.9"
+                	},
+                	{
+                        	"type": "storage",
+                        	"node_id": "2f45731160c02f69cad1ff8ab9a48492dc3b2022", 
+                        	"ip": "35.242.172.58",
+                        	"failover_ip": "35.242.172.59"
+                	},
+                	{
+                        	"type": "transcoder",
+                        	"node_id": "88aee28aa0a28177d2c676bfafda48d03ff44eb8", 
+                        	"ip": "35.233.205.84",
+                        	"failover_ip": "35.233.205.85" 
+                	},
+                	{
+                        	"type": "transcoder",
+                        	"node_id": "d8a9d07b9884d32da3700634aab1d373fffd36ef",
+                        	"ip": "35.197.27.59",
+                        	"failover_ip": "35.197.27.60"
+                	},
+                	{
+                        	"type": "transcoder",
+                        	"node_id": "4586f87cdeb706f037d4cddcac051c04b2f55d16",
+                        	"ip": "35.197.4.197",
+                        	"failover_ip": "35.197.4.198"
+                	}
+        		]
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"_comments": "version 1.0 API. Top level describe ref: https://docs.google.com/document/d/1fFYMT2GRLFBQrtF0fltHrq_-3tciqQ6-fT_43CoPBS0, former t5_task_gen.json",
+        "apiVersion": "1.00",
+        "typeApi": "public",
+        "command": "node",
+        "subcommand": "create",
+	"params": "storage",
+	"node_id":"2f45731160c02f69cad1ff8ab9a48492dc3b2022"
+}
