@@ -48,6 +48,35 @@ videocoin network consist of set of instances like nginx-rtmp/ffmpeg
 - the start message starts streaming to ffmpeg / nginx and sends the transaction to the ethereum counter contract, increasing the counter by 1
 - the stop message stops streaming to ffmpeg / nginx and sends the transaction to the ethereum counter contract, decreasing the counter by 1
 
+**Creating a set of scripts for the ping - pong schema in whisper (Python)**
+
+- t3_whisper_send.py PoC. Send message via whisper using symmetric crypto-key. Network vcnet2.
+
+- t3_whisper_rec.py PoC. Receive message via whisper using symmetric crypto-key. Network vcnet2.
+
+- t4_whisper_genpub.py 8502 8507 Generate t4.json for localy geth (RPC port range as sys.argv) 
+- t4.json - cache of whisper node list .. generated with t4_whisper_genpub.py on each nodes and join.
+
+- t4_whisper_send.py 8502 100 Send a 100 ping messages via 8502 RPC port. Send ping message 
+to all-know (now from t4.json) node (using public-key of destination) and waiting pong back.
+
+- t4_whisper_rec.py 8503 Where 8503 RPC port. listening and waiting for a ping message (to own public-key) and send pong back (to public-key of sender). For routing using t4.json table.
+
+- Counter2.json abi of samart-contract using for count messages sended and received
+
+
+**Installing and running a vcnet2 of 25 nodes (5 Whisper sender 20 Whisper receiver)**
+
+
+- install_geth_5node.sh install script 5 eth-node vcnet2 per 1 vm (RPC ports: 8502 - 8507, com ports: 30313 - 30318, 30312 bootnodes port)
+- start_vcnet2-[1-5].sh auto generated start script for 5x1 geth
+- start_vcnet2-all.sh full start 5 geth in 1 vm
+- stop_vcnet2_all.sh full stop 5 geth in 1 vm
+
+**reports**
+
+All reports about whisper jobs are in docs folder
+
 
 
 
