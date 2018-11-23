@@ -40,6 +40,13 @@ videocoin network consist of set of instances like nginx-rtmp/ffmpeg
 
 ![test scheme](./docs/whisper1.png)
 
+**Process description**
+
+- two nodes use geth with shh-api (whisper) on a vcnet2 network
+- whisper sender sends messages to the vcnet2 network
+- whisper receiver receives messages and turns them into system commands
+- the start message starts streaming to ffmpeg / nginx and sends the transaction to the ethereum counter contract, increasing the counter by 1
+- the stop message stops streaming to ffmpeg / nginx and sends the transaction to the ethereum counter contract, decreasing the counter by 1
 
 
 
