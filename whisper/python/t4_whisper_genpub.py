@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
 """
-    A pure python whisper ping daemon implementation using web3.py and geth 1.8.x.
-    ./t4_whisper_genpub.py RPCport
-    RPCport
-    example: ./t4_whisper_send.py 8502
+    A tools for python whisper ping implementation using web3.py and geth 1.8.x with asymmetric cryptography algorithms.
+    ./t4_whisper_genpub.py RPCPortMin RPCPortMax
+    result: t4.json (list of node/pubkey) for every whisper node. using in 5x5 node test for create "ping list" 
 """
 import datetime
 import json
