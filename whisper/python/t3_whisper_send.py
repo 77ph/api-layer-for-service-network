@@ -2,7 +2,7 @@
 """
 Send message via whisper using cryptography with symmetric key. Network vcnet2.
 
-./t3_whisper_send.py
+./t3_whisper_send.py "start"|"stop"
 PoC
 """
 import datetime
@@ -39,14 +39,16 @@ print('version shh: ', ms.version)
 
 symKeyID = ms.generateSymKeyFromPassword("shh_secret_pwd")
 print('id ===>>>> ', symKeyID)
-# user_pubkey = ms.getPublicKey(id)
-# print('user_pubkey ===>>> ', user_pubkey)
+print(sys.argv[1])
+command = sys.argv[1]
+command_as_bytes = command.encode()
 
 topic = Web3.toHex(b'1111')
-text = b'Hello world'
+text = command_as_bytes
+
 mes_send = ms.post(
     {
-	"symKeyID": symKeyID,
+        "symKeyID": symKeyID,
         "ttl": 100,
         "topic": topic,
         "powTarget": 2.0,
@@ -55,8 +57,7 @@ mes_send = ms.post(
     }
 )
 if mes_send:
-	print('Message Send')
+        print('Message Send')
 else:
-	print('Message not send')
-
+        print('Message not send')
 
