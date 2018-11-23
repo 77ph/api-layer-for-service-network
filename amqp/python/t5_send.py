@@ -1,19 +1,9 @@
 #!/usr/bin/env python3
 """
-    A pure python rabbitmq send a task to query of node [node_id].
-    ./t5_send.py pipeline.json
-    pipeline.json
-	{
-        "_comments": "version 1.0 API. Top level describe ref: https://docs.google.com/document/d/1fFYMT2GRLFBQrtF0fltHrq_-3tciqQ6-fT_43CoPBS0",
-        "apiVersion": "1.00",
-        "typeApi": "public",
-        "pipeline": 
-                {
-                        "type_source": "file"
-			...
-	} 
-
-    ./t5_send.py node_create-public.json   
+    A pure python implemetation send a task via AMQP (rabbitmq) to query of node [node_id].
+    ./t5_send.py ../api/pipeline-with-commands.json
+or
+    ./t5_send.py ../api/node_create-public.json   
 
 ToDo: split t5_send to vcli | API gate
 
