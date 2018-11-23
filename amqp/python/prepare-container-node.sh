@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## Exec from t5_read.py
+
 which docker
 
 if [ $? -eq 0 ]
