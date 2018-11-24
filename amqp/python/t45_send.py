@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
     A pure python rabbitmq send a task to query.
-    ./t5_send.py task.json
+    ./t45_send.py task.json
     task.json
     [{ "enode":"..00", "task":"command.json"},{}]
 
