@@ -5,7 +5,6 @@
 		"proto": "rtmp",
 		"application": "stream1",
 		"name": "test1",
-		"ip": "35.204.176.123",
 		"port": "1935"
 	},
        "outputs": [
