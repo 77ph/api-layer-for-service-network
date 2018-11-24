@@ -84,6 +84,23 @@ All reports about whisper jobs are in docs folder
 Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) message broker for our purposes.
 
 
+*advantages*
+
+1. rich and flexible logic and functionality
+2. fast
+3. stable and scalable
+
+*limitations*
+
+1. centralized (not important for poa networks)
+2. non encrypted messages
+
+**simple control scheme for videocoin network**
+
+**test** : Client, manual process creation, (1 distributor, 4 transcoders, 1 storage)
+
+![test scheme - network layer](./docs/amqp_scheme1.png)
+
 
 
 
