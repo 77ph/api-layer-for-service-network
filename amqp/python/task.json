@@ -1,0 +1,31 @@
+{
+"tasks": [ {
+	"enode":"588df2b4ff2bb655dec81ecdf23350b16bafefe7eca34fe6ecaacf34e494e4b529d11fe3e415144186bf642aefa980532f78a70e2dd6f80532c793f28e5c1539",
+	"command":"command2distr.json"
+	},
+	{
+	"enode":"02c861efbc0d4f551fe57a6637031add707ff0e90f5884fcc18a1ed50ddc753393f5bd47628b642bcac54539b9e360d465de51434ca05c1df6367764388ed2d5",
+	"command":"command2trascoder1.json"
+	},
+	{
+	"enode":"340a924552f66920f1c57b756d23345a15c7971e2c8c858f37413007fda1025394324147b30d1de38e9175e9785e24b5f289423e7727ad2b5edfcc6e2f030050",
+	"command":"command2storage.json"
+	},
+	{
+	"enode":"f3987c3d9556419f01ab1f9013b79bf97577929003804cc3519c3379513c55be3fb8d6b7d84dfa2806e52db2d1f9d6df323ae9dda4650b52fc4e74d6d5327566",
+	"command":"command2trascoder1.json"
+	},
+	{
+	"enode":"1d1467baa003d450e337262cd659a0aeeab82b526af0c5c4769c9a9917224d7fc765d6221f33b66930994d6663df056e777ebeaf8b50f3360a3174f6d58f1887",
+	"command":"command2trascoder2.json"
+	},
+	{
+	"enode":"02692d77f876eb72cfda30fb270c7b2590c58f3c3e3b10d96b87eea4084b1c8a90da2566fc52754c1e06825a4fa8a4005a29a3489bdfdab4f8595c765459f142",
+	"command":"command2trascoder3.json"
+	},
+	{
+	"enode":"e24c84c31e8f145e0c28886f31d3e1657e366759b9569ded23d2185785d87013df559ab319967433ff5c12dc946318b592f1cca83fb3bb7db8ca27fc5e041e2e",
+	"command":"command2trascoder4.json"
+	}  	
+ ]
+}
