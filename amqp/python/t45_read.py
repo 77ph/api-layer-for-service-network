@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-    A pure python rabbitmq read a task from query and reconfig nginx.
-    ./t5_read.py enode
+    A pure python rabbitmq read a task from query and reconfig nginx without docker.
+    ./t45_read.py enode
 """
 
 import pika
