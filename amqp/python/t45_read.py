@@ -200,8 +200,8 @@ to
 application stream {
         live on;
         exec ffmpeg -i rtmp://localhost:1935/stream/test
-                -c:a copy -c:v copy -f rtmp://35.242.172.58:1935/hls/test_original
-                -c:a copy -c:v copy -f rtmp://35.236.33.116:1935/stream/test
+                -c:a copy -c:v copy -f flv rtmp://35.242.172.58:1935/hls/test_original
+                -c:a copy -c:v copy -f flv rtmp://35.236.33.116:1935/stream/test
 }
 
 """	
