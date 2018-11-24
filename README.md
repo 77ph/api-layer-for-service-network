@@ -117,4 +117,13 @@ Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) mess
 - Each member receives a configuration message and applies it to their nginx.
 
 
+**Results and issues**
 
+
+- Messaging system work good
+- rtmp delay between original stream and transcoded streams. Every time we have different amount of chunks on storage.
+- original stream should have compatible format for hls
+- bandwidth for distributor (50 in 250 out for 1 4k file)
+
+
+**[Full report is availible here](./docs/RabbitMQ testing for videocoin network.docx)**
