@@ -5,7 +5,6 @@
 		"proto": "rtmp",
 		"application": "stream1",
 		"name": "test1",
-		"ip": "35.236.33.116",
 		"port": "1935"
 	},
 	"parameters": {
