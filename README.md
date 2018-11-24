@@ -111,9 +111,9 @@ Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) mess
 - The client creates Exchange and a set of queues for all participants in the pipeline as well as a rule for routing messages in the queue.
 - Each pipeline  participant connects to listen to their queue.
 - The client sends the nginx config json configuration files for each of the participants in queue
-- - message for storage
-- - message to distributor
-- - message N for transcoder N
+  - message for storage
+  - message to distributor
+  - message N for transcoder N
 - Each member receives a configuration message and applies it to their nginx.
 
 
