@@ -4,10 +4,6 @@
 	"command":"command2distr.json"
 	},
 	{
-	"enode":"02c861efbc0d4f551fe57a6637031add707ff0e90f5884fcc18a1ed50ddc753393f5bd47628b642bcac54539b9e360d465de51434ca05c1df6367764388ed2d5",
-	"command":"command2trascoder1.json"
-	},
-	{
 	"enode":"340a924552f66920f1c57b756d23345a15c7971e2c8c858f37413007fda1025394324147b30d1de38e9175e9785e24b5f289423e7727ad2b5edfcc6e2f030050",
 	"command":"command2storage.json"
 	},
