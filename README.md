@@ -126,4 +126,9 @@ Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) mess
 - bandwidth for distributor (50 in 250 out for 1 4k file)
 
 
-**![Full report is availible here](./docs/RabbitMQ testing for videocoin network.docx)**
+Full report is availible into the docs folder (RabbitMQ testing for videocoin network.docx)
+
+
+
+
+
