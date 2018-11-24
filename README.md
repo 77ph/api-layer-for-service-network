@@ -112,8 +112,8 @@ Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) mess
 - Each pipeline  participant connects to listen to their queue.
 - The client sends the nginx config json configuration files for each of the participants in queue
 - - message for storage
-message to distributor
-message N for transcoder N
+- - message to distributor
+- - message N for transcoder N
 - Each member receives a configuration message and applies it to their nginx.
 
 
