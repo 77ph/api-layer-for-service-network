@@ -99,7 +99,13 @@ Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) mess
 
 **test** : Client, manual process creation, (1 distributor, 4 transcoders, 1 storage)
 
+**Network layer**
+
 ![test scheme - network layer](./docs/amqp_scheme1.png)
+
+**RabbitMQ layer**
+
+![test scheme - RabbitMQ layer](./docs/amqp_scheme2.png)
 
 
 
