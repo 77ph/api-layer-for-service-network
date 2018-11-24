@@ -3,7 +3,7 @@ Some approaches to api control layer for DSN
 
 **Main objecive**
 
-
+- DSN - Decentralized Services Network (Transcoding or CDN or anti DDOS etc)
 - choose suitable messaging protocol for control to DSN instances
 - define criteria for such protocol
 
