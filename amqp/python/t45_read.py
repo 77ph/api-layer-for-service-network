@@ -28,13 +28,12 @@ verbose = 1
 """
 {
         "command": "config",
-        "type":    "transcoder", ### type node, because parsing logic too different
+        "type":    "transcoder", 
         "input": {
                 "proto": "rtmp",
                 "application": "stream",
                 "name": "test",
-                "port": "1935",
-		"ip": "35.236.33.116" ##### without ip don't working. bad: rtmp://localhost:1935/app/stream good: rtmp://35.236.33.116:1935/app/stream. OS depended 
+                "port": "1935"  
         },
         "parameters": {
                 "codec": "libx264",
@@ -53,7 +52,7 @@ verbose = 1
 to
 application stream {
         live on;
-        exec ffmpeg -i rtmp://35.236.33.116:1935/stream/test
+        exec ffmpeg -i rtmp://localhost:1935/stream/test
                 -vcodec libx264 -vf scale=1280x720 -b:v 2000000 -f flv rtmp://35.242.172.58:1935/hls/test_hq;
 }
 
@@ -62,15 +61,15 @@ application stream {
 def reconfig_nginx_transcoder(data):
 	res_conf_file = "application " + data['input']['application'] + " {\n"
 	res_conf_file += "\t" + "live on;\n"
-	res_conf_file += "\t" + "exec ffmpeg -i " + data['input']['proto'] + "://" + data['input']['ip'] + ":" + data['input']['port'] + "/" + data['input']['application'] + "/" + data['input']['name'] + "\n"
+	res_conf_file += "\t" + "exec ffmpeg -i " + data['input']['proto'] + "://localhost" + ":" + data['input']['port'] + "/" + data['input']['application'] + "/" + data['input']['name'] + "\n"
 	res_conf_file += "\t\t" + "-vcodec " + data['parameters']['codec'] + " -b:v " + data['parameters']['vbitrate'] + " -vf scale=" + data['parameters']['resolution']
 	if data['output']['proto'] == "rtmp":
 		res_conf_file += " -f flv "
 	res_conf_file +=  data['output']['proto'] + "://" + data['output']['ip'] + ":" + data['output']['port'] + "/" + data['output']['application'] + "/" + data['output']['name'] 
 	try:
-		res_conf_file += "_" + data['output']['variant'] + " 2>>/var/log/ffmpeg-$name.log;\n"
+		res_conf_file += "_" + data['output']['variant'] + "\n"
 	except KeyError:
-		res_conf_file += " 2>>/var/log/ffmpeg-$name.log;\n"
+		res_conf_file += "\n"
 	res_conf_file += "}\n"
 	if verbose:
 		print("conf = {}".format(res_conf_file))
@@ -94,16 +93,16 @@ def reconfig_nginx_transcoder(data):
 Json file to nginx config and reload.
 {
         "command": "config",
-        "type": "storage", ### type node
+        "type": "storage",
         "fragemt_duration": "5",
         "inputs": [
                 {
                         "proto": "rtmp",
                         "application": "hls",
-                        "name": "test",### dont used in nginx config
-                        "variant": "original" ### needing variant vs full-name because nginx wants hls_variants aaa
+                        "name": "test",
+                        "variant": "original",
                         "resolution": "1920x1080",
-                        "vbitrate": "8000", ### vbitrate vs bitrate
+                        "vbitrate": "8000",
                         "port": "1935"
                 },
                 {
@@ -129,12 +128,12 @@ to
 
 """
 def reconfig_nginx_storage(data):
-	hls_path="/opt/data/hls" ## pre-defined??
 	app=""
 	for p in data['inputs']:
 		res_conf_file = "application " + p['application'] + " {\n"
 		app=p['application']
 		break
+	hls_path="/opt/data/" + app 
 	res_conf_file += "\t" + "live on;\n"
 	res_conf_file += "\t" + "hls on;\n"
 	try:
@@ -142,12 +141,12 @@ def reconfig_nginx_storage(data):
 	except KeyError:
 		res_conf_file += "\t" + "hls_fragment 5s;\n"
 	res_conf_file += "\t" + "hls_path " + hls_path + ";\n"
-	# res_conf_file += "\t" + "hls_nested off;\n"
-	# res_conf_file += "\t" + "hls_fragment_naming timestamp;\n"
-	# res_conf_file += "\t" + "hls_fragment_naming_granularity 2;\n"
-	# res_conf_file += "\t" + "hls_fragment_slicing aligned;\n"	
-	# for p in data['inputs']:
-	#	res_conf_file += "\t"	+ "hls_variant" + " _" + p['variant'] + " BANDWIDTH=" + p['vbitrate'] + "," + "RESOLUTION=" + p['resolution'] + ";\n" 
+	res_conf_file += "\t" + "hls_nested off;\n"
+	res_conf_file += "\t" + "hls_fragment_naming timestamp;\n"
+	res_conf_file += "\t" + "hls_fragment_naming_granularity 2;\n"
+	res_conf_file += "\t" + "hls_fragment_slicing aligned;\n"	
+	for p in data['inputs']:
+		res_conf_file += "\t"	+ "hls_variant" + " _" + p['variant'] + " BANDWIDTH=" + p['vbitrate'] + "," + "RESOLUTION=" + p['resolution'] + ";\n" 
 	res_conf_file += "}\n"
 	if verbose:
 		print("conf = {}".format(res_conf_file))
@@ -176,7 +175,6 @@ Json command to nginx config and reload.
                 "proto": "rtmp",
                 "application": "stream",
                 "name": "test",
-		"ip": "35.204.176.123",
                 "port": "1935"
         },
        "outputs": [
@@ -210,7 +208,7 @@ application stream {
 def reconfig_nginx_distributor(data):
 	res_conf_file = "application " + data['input']['application'] + " {\n"
 	res_conf_file += "\t" + "live on;\n"
-	res_conf_file += "\t" + "exec ffmpeg -i " + data['input']['proto'] + "://" + data['input']['ip'] + ":" + data['input']['port'] + "/" + data['input']['application'] + "/" + data['input']['name'] + "\n"
+	res_conf_file += "\t" + "exec ffmpeg -i " + data['input']['proto'] + "://localhost" + ":" + data['input']['port'] + "/" + data['input']['application'] + "/" + data['input']['name'] + "\n"
 	for p in data['outputs']:
 		res_conf_file += "\t\t"	+ "-c:a copy -c:v copy"
 		if p['proto'] == "rtmp":
