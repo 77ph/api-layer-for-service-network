@@ -1,0 +1,54 @@
+{
+	"command": "config",
+	"type": "storage",
+	"fragemt_duration": "5",
+	"inputs": [
+		{
+			"proto": "rtmp",
+			"application": "hls1",
+			"name": "test1",
+			"variant": "original",
+			"resolution": "4096x2160",
+			"vbitrate": "50000000",
+			"port": "1935"
+		},
+		{
+			"proto": "rtmp",
+			"application": "hls1",
+			"name": "test1",
+			"variant": "1080p",
+			"resolution": "1920x1080",
+			"vbitrate": "6000000",			
+			"port": "1935"
+		},
+		{
+                        "proto": "rtmp",
+                        "application": "hls1",
+                        "name": "test1",
+                        "variant": "720p",
+                        "resolution": "1280x720",
+                        "vbitrate": "4000000",
+                        "port": "1935"
+                },
+		{
+                        "proto": "rtmp",
+                        "application": "hls1",
+                        "name": "test1",
+                        "variant": "480p",
+                        "resolution": "854x480",
+                        "vbitrate": "2000000",
+                        "port": "1935"
+                },
+                {
+                        "proto": "rtmp",
+                        "application": "hls1",
+                        "name": "test1",
+                        "variant": "240p",
+                        "resolution": "426x240",
+                        "vbitrate": "1000000",
+                        "port": "1935"
+                }		
+	]
+		
+}
+

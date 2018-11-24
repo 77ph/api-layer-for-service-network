@@ -1,0 +1,25 @@
+{
+	"command": "config",
+	"type":	   "transcoder",
+	"input": {
+		"proto": "rtmp",
+		"application": "stream1",
+		"name": "test1",
+		"ip": "35.198.30.225",
+		"port": "1935"
+	},
+	"parameters": {
+		"codec": "libx264",
+		"vbitrate": "4000000",
+		"resolution": "1280x720"
+	},
+        "output": {
+	 	"proto": "rtmp",
+		"application": "hls1",
+		"name": "test1",
+		"variant": "720p",
+		"ip": "35.242.172.58",
+		"port": "1935"
+        }
+}
+

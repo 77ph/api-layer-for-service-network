@@ -1,0 +1,50 @@
+{
+	"command": "config",
+	"type": "distributor",
+	"input": {
+		"proto": "rtmp",
+		"application": "stream1",
+		"name": "test1",
+		"ip": "35.204.176.123",
+		"port": "1935"
+	},
+       "outputs": [
+        {
+	 		"proto": "rtmp",
+			"application": "hls1",
+			"name": "test1",
+			"variant": "original",
+			"ip": "35.242.172.58",
+			"port": "1935"
+        },
+        {
+	 		"proto": "rtmp",
+			"application": "stream1",
+			"name": "test1",
+			"ip": "35.236.33.116",
+			"port": "1935"
+        },
+	{
+                        "proto": "rtmp",
+                        "application": "stream1",
+                        "name": "test1",
+                        "ip": "35.198.30.225",
+                        "port": "1935"
+        },
+	{
+                        "proto": "rtmp",
+                        "application": "stream1",
+                        "name": "test1",
+                        "ip": "35.221.152.9",
+                        "port": "1935"
+        },
+	{
+                        "proto": "rtmp",
+                        "application": "stream1",
+                        "name": "test1",
+                        "ip": "35.190.226.210",
+                        "port": "1935"
+        }
+    ]
+}
+
