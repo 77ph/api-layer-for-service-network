@@ -79,7 +79,9 @@ All reports about whisper jobs are in docs folder
 
 
 
+**[AMQP](http://www.amqp.org/)**
 
+Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) message broker for our purposes.
 
 
 
