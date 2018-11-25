@@ -179,6 +179,14 @@ Full report is availible into the docs folder (RabbitMQ testing for videocoin ne
 - Blacklist
 
 
+Full API comands list is in docs folder (file: Microservices decomposition and API commands.docx)
+
+
+**Using the docker of the nginx-rtmp container to install and configure the node (distributor, transcoder, storage)**
+
+![scheme with docker](./docs/docker-nginx.jpg)
+
+
 
 
 
