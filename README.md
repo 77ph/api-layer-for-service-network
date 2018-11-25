@@ -236,6 +236,8 @@ A complete set of the tests to create, configure and delete instances (distribut
 
 Configuration files, test results and issues were reperesented into docs folder in file: *Microservices decomposition and API commands.docx*
 
+Naming logic for streams is described in file: *First steps for API.docx*
+
 
 **Scrypts**
 
