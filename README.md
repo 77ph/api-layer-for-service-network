@@ -215,3 +215,51 @@ To work with unified json, a nginx-rtmp fork was created with an empty default c
 
 repo for this image is availible [here](https://hub.docker.com/r/77phnet/nginx-rtmp/)
 
+
+
+**Tests**
+
+A complete set of the tests to create, configure and delete instances (distributor, transcoder and storage) were performed using bash scrypt modules-test.sh
+
+- 1 TEST - creating a distributor node
+
+- 2 TEST - distributor node configuration for application job_id
+
+- 3 TEST - create transcoder node
+
+- 4 TEST - configuration transcoder node for application job_id
+
+- 5 TEST - creating storage node
+
+- 6 TEST - storage node configuration for application job_id
+
+
+Configuration files, test results and issues were reperesented in file: 
+# Microservices decomposition and API commands.docx
+
+
+**Scrypts**
+
+- prepare-container-node.sh Description: Called from t5_read.py. Script for pre-configure dockers subsystem and cleaning a dirs. Please, don't using as standalone script and don't move. 
+- t5_read.py node_id Description: Reading a task via AMQP from query $node_id and create a docker container or reconfig nginx in container. Using "private" mode API. RabbitMQ server located in 10.168.0.2 with predefined credentials
+- t5_send.py ../api/pipeline-with-commands.json or ../api/node_create-public.json  Description: Sending a "pipeline" to a query "node_id" (for each node used own task, according to the description of pipeline) or sending "task" "create node" to a query "node_id".
+
+Auto-converted "public" API to "private" API. RabbitMQ server located in 10.168.0.2 with predefined credentials
+- modules-test.sh Description: 6th tests: 1-2: Create a distributor + configure distributor via t5_send.py/t5_read. 3-4: Create a transcoder + configure transcoder via t5_send.py/t5_read.py.
+
+5-6: Create a storage + configure storage via t5_send.py/t5_read.py. All reference tasks and reference configure file located in "test" directory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
