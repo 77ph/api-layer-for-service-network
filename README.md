@@ -148,4 +148,38 @@ Full report is availible into the docs folder (RabbitMQ testing for videocoin ne
 
 
 
+**Microservices:**
+
+- Customer GUI
+- DWH
+- Node owner GUI
+- Registry manager
+- Jobs manager
+- Verify manager
+- Transcoding service
+- Distributor service
+- Storage service
+- Billing
+- Payments
+- Notification
+- Monitoring
+
+**API’s:**
+
+- Blue circle, blue line (AMQP transport, async usage, RabbitMQ)
+- Green circle, black line (http json-rpc, sync usage, geth and web3py)
+- Green line - software installation
+
+
+**Smart Contracts (Ethereum POA)**
+
+- Accounts
+- Nodes
+- Jobs
+- Blacklist
+
+
+
+
+
 
