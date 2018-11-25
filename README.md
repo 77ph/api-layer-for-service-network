@@ -137,11 +137,14 @@ Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) mess
 
 Full report is availible into the docs folder (RabbitMQ testing for videocoin network.docx)
 
+
+
 **Proposals for microservices decomposition and API**
 
 
+**General decomposition**
 
-
+![General decomposition](./docs/microservices.png)
 
 
 
