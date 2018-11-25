@@ -244,9 +244,10 @@ Configuration files, test results and issues were reperesented into docs folder 
 - t5_send.py ../api/pipeline-with-commands.json or ../api/node_create-public.json  Description: Sending a "pipeline" to a query "node_id" (for each node used own task, according to the description of pipeline) or sending "task" "create node" to a query "node_id".
 
 Auto-converted "public" API to "private" API. RabbitMQ server located in 10.168.0.2 with predefined credentials
-- modules-test.sh Description: 6th tests: 1-2: Create a distributor + configure distributor via t5_send.py/t5_read. 3-4: Create a transcoder + configure transcoder via t5_send.py/t5_read.py.
-
-5-6: Create a storage + configure storage via t5_send.py/t5_read.py. All reference tasks and reference configure file located in "test" directory.
+- modules-test.sh Description: 6th tests: 
+   - 1-2: Create a distributor + configure distributor via t5_send.py/t5_read. 
+   - 3-4: Create a transcoder + configure transcoder via t5_send.py/t5_read.py.
+   - 5-6: Create a storage + configure storage via t5_send.py/t5_read.py. All reference tasks and reference configure file located in "test" directory.
 
 
 
