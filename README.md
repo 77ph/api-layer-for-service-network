@@ -239,7 +239,7 @@ Configuration files, test results and issues were reperesented into docs folder 
 Naming logic for streams is described in file: *First steps for API.docx*
 
 
-**Scrypts**
+**Scripts**
 
 - prepare-container-node.sh Description: Called from t5_read.py. Script for pre-configure dockers subsystem and cleaning a dirs. Please, don't using as standalone script and don't move. 
 - t5_read.py node_id Description: Reading a task via AMQP from query $node_id and create a docker container or reconfig nginx in container. Using "private" mode API. RabbitMQ server located in 10.168.0.2 with predefined credentials
