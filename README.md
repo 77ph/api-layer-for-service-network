@@ -234,8 +234,7 @@ A complete set of the tests to create, configure and delete instances (distribut
 - 6 TEST - storage node configuration for application job_id
 
 
-Configuration files, test results and issues were reperesented in file: 
-# Microservices decomposition and API commands.docx
+Configuration files, test results and issues were reperesented into docs folder in file: *Microservices decomposition and API commands.docx*
 
 
 **Scrypts**
