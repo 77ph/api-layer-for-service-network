@@ -125,8 +125,22 @@ Well known messaging protocol. We use [RabbitMQ](https://www.rabbitmq.com/) mess
 - original stream should have compatible format for hls
 - bandwidth for distributor (50 in 250 out for 1 4k file)
 
+**scrypts**
+- hello_world_rec.py Description: PoC Receive a message from "test" queue. RabbitMQ server located in 10.163.0.3 with predefined credentials
+- hello_world_send.py Description: PoC Send "Hello world" message to "test" queue with with routing-key = "test". RabbitMQ server located in 10.163.0.3 with predefined credentials
+
+- t45_read.py node_id. Description: Reading a task via AMQP from query $node_id and reconfig nginx without docker. Using first version API. RabbitMQ server located in 10.168.0.3 with predefined credentials
+- t45_send.py task.json Description: Sending a "pipeline" to a query "node_id" (for each node used own task, according to the description of pipeline). Using first version API. Pipeline in nested file task.json
+- task.json File of task contains nested json array [{ "enode":"..00", "task":"command.json"},{}]
+
+
 
 Full report is availible into the docs folder (RabbitMQ testing for videocoin network.docx)
+
+**Proposals for microservices decomposition and API**
+
+
+
 
 
 
