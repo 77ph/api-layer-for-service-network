@@ -213,5 +213,5 @@ It is proposed to divide the json configuration file for nodes into 2 parts:
 
 To work with unified json, a nginx-rtmp fork was created with an empty default configuration for [nginx](https://github.com/77ph/docker-nginx-rtmp)
 
-
+repo for this image is availible [here](https://hub.docker.com/r/77phnet/nginx-rtmp/)
 
