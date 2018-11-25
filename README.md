@@ -252,6 +252,13 @@ Auto-converted "public" API to "private" API. RabbitMQ server located in 10.168.
    - 5-6: Create a storage + configure storage via t5_send.py/t5_read.py. All reference tasks and reference configure file located in "test" directory.
 
 
+**Resume**
+
+AMQP protocol with RabbitMQ brocker more suitable for POA networks then whisper, but some questions are remain to investigate:
+
+- choose best instances to create pipeline (it's possible in frame of AMQP)
+- allow and deny accsess for users and nodes to the messaging layer
+- message encryption
 
 
 
