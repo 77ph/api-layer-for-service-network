@@ -182,12 +182,36 @@ Full report is availible into the docs folder (RabbitMQ testing for videocoin ne
 Full API comands list is in docs folder (file: Microservices decomposition and API commands.docx)
 
 
+
+
 **Using the docker of the nginx-rtmp container to install and configure the node (distributor, transcoder, storage)**
+
+
 
 ![scheme with docker](./docs/docker-nginx.jpg)
 
+- Changing json format for reconfiguring nodes and dividing formats into public / private
+- Preparing a docker image to work with this file (project in github + image in docker repo)
+- Modification of the read.py receiver to work with the docker container
+- Modification sender send.py for public configuration commands
+- Real configuration tests
 
 
+
+**Json format unification**
+
+It is proposed to divide the json configuration file for nodes into 2 parts:
+- The api private part contains the data associated with the installation of the docker container node
+- The api public part is related to the direct configuration of the node for performing a specific task (node role). The process itself is opaque to the user and serves solely to simplify the understanding and configuration of the node file.
+
+
+
+
+
+**Nginx-rtmp docker image**
+
+
+To work with unified json, a nginx-rtmp fork was created with an empty default configuration for [nginx](https://github.com/77ph/docker-nginx-rtmp)
 
 
 
